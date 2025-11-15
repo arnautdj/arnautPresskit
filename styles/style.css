@@ -69,3 +69,25 @@ html {
 footer {
   margin-bottom: 70vh;
 }
+
+
+/*
+  SOLUCIÓN PARA EL MENÚ MÓVIL TRANSPARENTE
+*/
+@media (max-width: 991.98px) {
+  /*
+    Explicación:
+    1. @media (max-width: 991.98px) -> Se aplica solo a pantallas pequeñas (móviles/tablets).
+    2. .navbar:not(.navbar-solid) -> Selecciona la navbar SÓLO CUANDO es transparente (cuando no tiene la clase sólida).
+    3. .navbar-collapse -> Selecciona el menú desplegable.
+  */
+  .navbar:not(.navbar-solid) .navbar-collapse {
+    /* Le damos el mismo fondo oscuro que la barra sólida */
+    background-color: #212529;
+
+    /* Extras para que se vea bien */
+    margin-top: 10px; /* Un espacio para separarlo de la barra */
+    padding: 15px; /* Relleno interno */
+    border-radius: 0.35rem; /* Bordes redondeados */
+  }
+}
