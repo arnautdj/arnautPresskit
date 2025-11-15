@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 55px;
+}
+
+.navbar {
+  background-color: transparent;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  /* Transición suave para el cambio de color */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-solid {
+  background-color: #212529 !important;
+  /* Color exacto de 'bg-dark' */
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+    color: #f1f1f1 !important;
+}
+
+
+.hero-section {
+  
+  position: relative;
+  
+  /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
+  height: 100vh;
+
+  background-image: url('../images/hero-background.jpg');
+
+  /* 3. Estilos para la imagen de fondo */
+  background-size: cover;
+  /* Cubre todo el espacio, sin deformarse */
+  background-position: center center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* No repetir la imagen */
+
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  z-index: 0;
+}
+
+/* Logo de la portada sobre el fondo */
+.hero-logo {
+  max-width: 500px;
+  width: 80%;
+}
+
+/* Contenedor para el logo y subtítulo en el Hero */
+.hero-content-container {
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+/*
+footer {
+  margin-bottom: 70vh;
+}
