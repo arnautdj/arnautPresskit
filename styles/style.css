@@ -18,18 +18,18 @@ html {
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 .navbar .nav-link:hover {
-    color: #f1f1f1 !important;
+  color: #f1f1f1 !important;
 }
 
 
 .hero-section {
-  
+
   position: relative;
-  
+
   /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
   height: 100vh;
 
@@ -65,6 +65,7 @@ html {
   position: relative;
   z-index: 1;
 }
+
 /*
 footer {
   margin-bottom: 70vh;
@@ -75,6 +76,7 @@ footer {
   SOLUCIÓN PARA EL MENÚ MÓVIL TRANSPARENTE
 */
 @media (max-width: 991.98px) {
+
   /*
     Explicación:
     1. @media (max-width: 991.98px) -> Se aplica solo a pantallas pequeñas (móviles/tablets).
@@ -86,8 +88,40 @@ footer {
     background-color: #212529;
 
     /* Extras para que se vea bien */
-    margin-top: 10px; /* Un espacio para separarlo de la barra */
-    padding: 15px; /* Relleno interno */
-    border-radius: 0.35rem; /* Bordes redondeados */
+    margin-top: 10px;
+    /* Un espacio para separarlo de la barra */
+    padding: 15px;
+    /* Relleno interno */
+    border-radius: 0.35rem;
+    /* Bordes redondeados */
+  }
+}
+
+
+
+/*
+  SOLUCIÓN "HAND-OFF" PARA EL LOGO (Ocultarlo en la portada y mostrarlo por debajo)
+*/
+
+/* Transición suave al logo de la barra */
+.navbar-brand {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Solo en pantallas de escritorio (donde el menú no está colapsado) */
+@media (min-width: 992px) {
+
+  /* Oculta el logo de la barra... */
+  .navbar:not(.navbar-solid) .navbar-brand {
+    /* ...SÓLO si la barra es transparente (NO tiene la clase .navbar-solid) */
+    opacity: 0;
+    pointer-events: none;
+    /* Opcional: lo hace "no-clicable" cuando está invisible */
+  }
+
+  /* uestra el logo de la barra cuando SÍ tiene la clase .navbar-solid */
+  .navbar.navbar-solid .navbar-brand {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
