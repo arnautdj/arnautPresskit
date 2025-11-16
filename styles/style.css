@@ -33,7 +33,7 @@ html {
   /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
   height: 100vh;
 
-  background-image: url('../images/hero-background.jpg');
+  background-image: url('../images/hero-background.webp');
 
   /* 3. Estilos para la imagen de fondo */
   background-size: cover;
