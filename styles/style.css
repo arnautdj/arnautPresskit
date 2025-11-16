@@ -108,9 +108,6 @@ footer {
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Solo en pantallas de escritorio (donde el menú no está colapsado) */
-@media (min-width: 992px) {
-
   /* Oculta el logo de la barra... */
   .navbar:not(.navbar-solid) .navbar-brand {
     /* ...SÓLO si la barra es transparente (NO tiene la clase .navbar-solid) */
@@ -124,4 +121,3 @@ footer {
     opacity: 1;
     pointer-events: auto;
   }
-}
