@@ -15,14 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarHeight = navbar.offsetHeight;
 
   // 5. Define el "punto de activación"
-  // Queremos que la barra cambie JUSTO ANTES de que el 
-  // final del "Hero" pase por debajo de ella.
   const triggerPoint = heroHeight - navbarHeight;
 
   // 6. Escucha el evento 'scroll' en la ventana
   window.addEventListener('scroll', function () {
-    // Comprueba si el scroll vertical (window.scrollY) 
-    // ha pasado el punto de activación
+    // Comprueba si el scroll vertical (window.scrollY) ha pasado el punto de activación
     if (window.scrollY > triggerPoint) {
       // Si ha pasado, añade la clase sólida
       navbar.classList.add('navbar-solid');

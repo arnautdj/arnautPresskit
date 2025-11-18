@@ -116,7 +116,7 @@ footer {
     /* Opcional: lo hace "no-clicable" cuando está invisible */
   }
 
-  /* uestra el logo de la barra cuando SÍ tiene la clase .navbar-solid */
+  /* Muestra el logo de la barra cuando SÍ tiene la clase .navbar-solid */
   .navbar.navbar-solid .navbar-brand {
     opacity: 1;
     pointer-events: auto;
