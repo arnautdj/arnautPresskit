@@ -124,10 +124,23 @@ html {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
+    border-radius: 20px; /* Bordes mucho más redondeados y modernos */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6); /* Sombra difusa, cero bordes duros */
+}
+
+.video-card img {
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    filter: brightness(0.85) saturate(0.6); /* Apaga un poco el color inicial */
 }
 
 .video-card:hover {
     transform: translateY(-5px);
+}
+
+.video-card:hover img {
+    filter: brightness(1.1) saturate(1.1); /* Estalla el color al hacer hover */
+    transform: scale(1.02); /* Pequeño zoom interno */
 }
 
 
