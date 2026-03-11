@@ -42,6 +42,7 @@ html {
   /* Centra la imagen */
   background-repeat: no-repeat;
   /* No repetir la imagen */
+  background-attachment: fixed;
 
 }
 
@@ -66,10 +67,17 @@ html {
   z-index: 1;
 }
 
-/*
-footer {
-  margin-bottom: 70vh;
+
+
+
+/* Fondo inmersivo para la sección El Show */
+#el-show {
+    background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), url('../images/photo-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
 }
+
 
 
 /*
@@ -103,10 +111,10 @@ footer {
   SOLUCIÓN "HAND-OFF" PARA EL LOGO (Ocultarlo en la portada y mostrarlo por debajo)
 */
 
-/* Transición suave al logo de la barra */
-.navbar-brand {
-  transition: opacity 0.3s ease-in-out;
-}
+  /* Transición suave al logo de la barra */
+  .navbar-brand {
+    transition: opacity 0.3s ease-in-out;
+  }
 
   /* Oculta el logo de la barra... */
   .navbar:not(.navbar-solid) .navbar-brand {
