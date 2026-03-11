@@ -1,6 +1,16 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 55px;
+  /* Eliminamos el scroll-padding-top global de aquí */
+}
+
+/* 1. Le damos el margen superior a TODAS las secciones por defecto */
+section, footer {
+  scroll-margin-top: 55px;
+}
+
+/* 2. EXCEPCIÓN: Las secciones inmersivas deben tocar el techo (0px) para que la barra transparente se superponga al fondo */
+#el-show, #video {
+  scroll-margin-top: 0px !important;
 }
 
 .navbar {
@@ -72,7 +82,7 @@ html {
 
 /* Fondo inmersivo para la sección El Show */
 #el-show {
-    background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), url('../images/photo-1.webp');
+    background-image: linear-gradient(rgba(15, 15, 15, 0.512), rgba(15, 15, 15, 0.8)), url('../images/photo-1.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
@@ -181,25 +191,19 @@ html {
 
 
 
+
+
 /*
-  SOLUCIÓN "HAND-OFF" PARA EL LOGO (Ocultarlo en la portada y mostrarlo por debajo)
+  SOLUCIÓN "HAND-OFF" PARA EL LOGO (Controlado por JavaScript)
 */
 
-  /* Transición suave al logo de la barra */
-  .navbar-brand {
+/* Transición suave al logo de la barra */
+.navbar-brand {
     transition: opacity 0.3s ease-in-out;
-  }
+}
 
-  /* Oculta el logo de la barra... */
-  .navbar:not(.navbar-solid) .navbar-brand {
-    /* ...SÓLO si la barra es transparente (NO tiene la clase .navbar-solid) */
+/* Oculta el logo SÓLO cuando JS le añade la clase .hide-logo */
+.navbar.hide-logo .navbar-brand {
     opacity: 0;
     pointer-events: none;
-    /* Opcional: lo hace "no-clicable" cuando está invisible */
-  }
-
-  /* Muestra el logo de la barra cuando SÍ tiene la clase .navbar-solid */
-  .navbar.navbar-solid .navbar-brand {
-    opacity: 1;
-    pointer-events: auto;
-  }
+}
