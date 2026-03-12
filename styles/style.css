@@ -9,7 +9,7 @@ section, footer {
 }
 
 /* 2. EXCEPCIÓN: Las secciones inmersivas deben tocar el techo (0px) para que la barra transparente se superponga al fondo */
-#el-show, #video {
+#el-show, #video, #booking {
   scroll-margin-top: 0px !important;
 }
 
@@ -36,6 +36,31 @@ section, footer {
 }
 
 
+
+
+
+/* Efecto interactivo para los botones principales de la web */
+.hero-section .btn, 
+#el-show .btn,
+#musica .btn,
+#video .btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.hero-section .btn:hover, 
+#el-show .btn:hover,
+#musica .btn:hover,
+#video .btn:hover {
+    transform: scale(1.08); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+}
+
+
+
+
+
+/* HERO SECTION */
+
 .hero-section {
 
   position: relative;
@@ -59,7 +84,10 @@ section, footer {
 .hero-section::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   z-index: 0;
 }
@@ -78,15 +106,60 @@ section, footer {
 }
 
 
+/*
+  SOLUCIÓN "HAND-OFF" PARA EL LOGO (Controlado por JavaScript)
+*/
 
+/* Transición suave al logo de la barra */
+.navbar-brand {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Oculta el logo SÓLO cuando JS le añade la clase .hide-logo */
+.navbar.hide-logo .navbar-brand {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+/* SHOW SECTION */
 
 /* Fondo inmersivo para la sección El Show */
 #el-show {
-    background-image: linear-gradient(rgba(15, 15, 15, 0.512), rgba(15, 15, 15, 0.8)), url('../images/photo-1.webp');
+    background-image: linear-gradient(rgba(15, 15, 15, 0.512), rgba(15, 15, 15, 0.8)), url('../images/showSection.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
 }
+
+/* --- ESTILO PREMIUM PARA LAS TARJETAS DE EL SHOW --- */
+#el-show .card {
+    border: none; /* Quitamos el borde gris feo por defecto */
+    border-radius: 20px; /* Esquinas muy redondeadas, igual que el video */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); /* La sombra difusa que crea el efecto flotante */
+    overflow: hidden; /* OBLIGATORIO: Evita que el fondo blanco de la tarjeta se salga por las esquinas redondas */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Efecto hover interactivo: la tarjeta "salta" hacia ti al pasar el ratón */
+#el-show .card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* Limpieza del encabezado de la tarjeta */
+#el-show .card-header {
+    border-bottom: none; /* Quitamos la línea divisoria para un look más limpio */
+    padding-top: 1.5rem; /* Le damos más aire arriba */
+    background-color: transparent !important; /* Para que herede el blanco sin problemas */
+}
+
 
 
 
@@ -134,14 +207,32 @@ section, footer {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
-    border-radius: 20px; /* Bordes mucho más redondeados y modernos */
+    border-radius: 40px; /* Bordes mucho más redondeados y modernos */
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6); /* Sombra difusa, cero bordes duros */
 }
 
 .video-card img {
-    border-radius: 20px;
+  border-radius: 40px;
     transition: all 0.4s ease;
-    filter: brightness(0.85) saturate(0.6); /* Apaga un poco el color inicial */
+}
+
+@media (hover: hover) {
+    
+    /* En PC, la imagen empieza apagada y dramática */
+    .video-card img {
+        filter: brightness(0.85) saturate(0.6); 
+    }
+
+    /* Al pasar el ratón, la tarjeta entera flota */
+    .video-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Y la imagen estalla en color con un zoom interno */
+    .video-card:hover img {
+        filter: brightness(1.1) saturate(1.1); 
+        transform: scale(1.02); 
+    }
 }
 
 .video-card:hover {
@@ -154,8 +245,6 @@ section, footer {
 }
 
 
-
-
 /* Definir el formato vertical para Shorts/Reels en Bootstrap */
 .ratio-9x16 {
     --bs-aspect-ratio: 177.77%; /* Es el resultado de dividir 16 / 9 */
@@ -164,46 +253,116 @@ section, footer {
 
 
 
+
+
+
+
+
+/* --- SECCIÓN BOOKING (El "Main Stage") --- */
+
+
+.bg-black {
+    background-color: #070707 !important; /* Un negro súper profundo, más oscuro que el bg-dark normal */
+}
+
+/* El texto gigante del fondo */
+.booking-bg-text {
+    font-size: clamp(5rem, 18vw, 20rem); /* Se adapta perfectamente al celular y a monitores gigantes */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02); /* Súper transparente para que sea sutil */
+    line-height: 1;
+    letter-spacing: -5px;
+    z-index: 0;
+    pointer-events: none; /* Evita que el usuario seleccione el texto por error */
+}
+
+/* Efecto Glassmorphism (Cristal) para los contactos */
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con un rebote elegante */
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-10px); /* La tarjeta flota hacia arriba */
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Botones de Redes Sociales flotantes */
+.social-btn {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-btn:hover {
+    background-color: white;
+    transform: translateY(-5px);
+}
+
+.social-btn:hover i {
+    color: black !important; /* Al hacer hover, el icono se vuelve negro sobre el fondo blanco */
+}
+
+
+
+
+
+
+
+
+
+
 /*
-  SOLUCIÓN PARA EL MENÚ MÓVIL TRANSPARENTE
+  =============================================================
+  SOLUCIONES EXCLUSIVAS PARA MÓVILES Y TABLETS (Máx 992px)
+  =============================================================
 */
 @media (max-width: 991.98px) {
 
-  /*
-    Explicación:
-    1. @media (max-width: 991.98px) -> Se aplica solo a pantallas pequeñas (móviles/tablets).
-    2. .navbar:not(.navbar-solid) -> Selecciona la navbar SÓLO CUANDO es transparente (cuando no tiene la clase sólida).
-    3. .navbar-collapse -> Selecciona el menú desplegable.
-  */
-  .navbar:not(.navbar-solid) .navbar-collapse {
-    /* Le damos el mismo fondo oscuro que la barra sólida */
-    background-color: #212529;
+    /* 1. CORRECCIÓN PARALLAX: Evita el pixelado de fondos en iOS/Android */
+    .hero-section,
+    #el-show {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+    }
 
-    /* Extras para que se vea bien */
-    margin-top: 10px;
-    /* Un espacio para separarlo de la barra */
-    padding: 15px;
-    /* Relleno interno */
-    border-radius: 0.35rem;
-    /* Bordes redondeados */
-  }
-}
+    /* 2. CORRECCIÓN EL SHOW: Ajusta el espacio para que no choque con la barra */
+    #el-show {
+        align-items: flex-start !important; 
+        padding-top: 100px !important; 
+        padding-bottom: 80px !important;
+    }
 
+    /* 3. CORRECCIÓN BOOKING: Ajusta el espacio del footer */
+    #booking {
+        justify-content: flex-start !important; 
+        padding-top: 130px !important; 
+        padding-bottom: 60px !important;
+    }
 
+    /* 4. EFECTO CRISTAL: Barra de navegación difuminada */
+    .navbar:not(.navbar-solid) {
+        background-color: rgba(15, 15, 15, 0.5) !important;
+        backdrop-filter: blur(12px); 
+        -webkit-backdrop-filter: blur(12px); 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    }
 
-
-
-/*
-  SOLUCIÓN "HAND-OFF" PARA EL LOGO (Controlado por JavaScript)
-*/
-
-/* Transición suave al logo de la barra */
-.navbar-brand {
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Oculta el logo SÓLO cuando JS le añade la clase .hide-logo */
-.navbar.hide-logo .navbar-brand {
-    opacity: 0;
-    pointer-events: none;
+    /* 5. MENÚ DESPLEGABLE: Fondo sólido al abrir el botón de las 3 rayitas */
+    .navbar:not(.navbar-solid) .navbar-collapse {
+        background-color: #212529;
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 0.35rem;
+    }
 }
