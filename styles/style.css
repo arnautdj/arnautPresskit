@@ -313,6 +313,28 @@ section, footer {
     color: black !important; /* Al hacer hover, el icono se vuelve negro sobre el fondo blanco */
 }
 
+/* Píldoras de estadísticas sociales para el Footer */
+.glass-stat-pill {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-stat-pill:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Colores específicos al pasar el ratón para dar un toque premium */
+.glass-stat-pill.ig:hover i { color: #E1306C !important; }
+.glass-stat-pill.tk:hover i { color: #00f2fe !important; text-shadow: 2px 0px 0px #fe0979; }
+.glass-stat-pill.fb:hover i { color: #1877F2 !important; }
+.glass-stat-pill.yt:hover i { color: #FF0000 !important; }
 
 
 
