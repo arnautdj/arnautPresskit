@@ -2,32 +2,56 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-  // 1. Selecciona la barra de navegación
+// 1. Seleccionamos la barra de navegación
   const navbar = document.querySelector('.navbar');
-
-  // 2. Selecciona la sección "Hero" para medir su altura
-  const heroSection = document.querySelector('.hero-section');
-
-  // 3. Obtiene la altura del "Hero"
-  const heroHeight = heroSection.offsetHeight;
-
-  // 4. Obtiene la altura de la propia barra de navegación
   const navbarHeight = navbar.offsetHeight;
 
-  // 5. Define el "punto de activación"
-  const triggerPoint = heroHeight - navbarHeight;
+  // 2. Seleccionamos SOLO las secciones donde queremos que la barra sea transparente
+  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking');
 
-  // 6. Escucha el evento 'scroll' en la ventana
-  window.addEventListener('scroll', function () {
-    // Comprueba si el scroll vertical (window.scrollY) ha pasado el punto de activación
-    if (window.scrollY > triggerPoint) {
-      // Si ha pasado, añade la clase sólida
-      navbar.classList.add('navbar-solid');
-    } else {
-      // Si está por encima, quita la clase sólida
+  // 3. Función que evalúa dónde estamos
+  function checkNavbarState() {
+    // Calculamos el punto exacto justo debajo de la barra de navegación
+    let scrollPos = window.scrollY + navbarHeight; 
+
+    let isTransparent = false;
+    let hideLogo = false;
+
+    // Escaneamos las secciones especiales
+    transparentSections.forEach(function(sec) {
+      const secTop = sec.offsetTop;
+      const secBottom = secTop + sec.offsetHeight;
+
+      // Si nuestro scroll está dentro de los límites de alguna de estas secciones
+      if (scrollPos >= secTop && scrollPos < secBottom) {
+        isTransparent = true; // La barra debe ser transparente
+
+        // Pero SOLO ocultamos el logo si estamos específicamente en el Hero
+        if (sec.classList.contains('hero-section')) {
+          hideLogo = true;
+        }
+      }
+    });
+
+    // APLICAMOS LOS CAMBIOS VISUALES
+    if (isTransparent) {
       navbar.classList.remove('navbar-solid');
+    } else {
+      navbar.classList.add('navbar-solid');
     }
-  });
+
+    if (hideLogo) {
+      navbar.classList.add('hide-logo');
+    } else {
+      navbar.classList.remove('hide-logo');
+    }
+  }
+
+  // 4. Ejecutamos la función cada vez que el usuario hace scroll
+  window.addEventListener('scroll', checkNavbarState);
+
+  // 5. Ejecutamos la función una vez al cargar la página por si el usuario recarga a mitad de la web
+  checkNavbarState();
 
 
   // CÓDIGO PARA CERRAR AUTOMÁTICAMENTE EL MENÚ EN MOVIL
