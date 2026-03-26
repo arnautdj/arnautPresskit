@@ -125,9 +125,6 @@ section, footer {
 
 
 
-
-
-
 /* SHOW SECTION */
 
 /* Fondo inmersivo para la sección El Show */
@@ -159,8 +156,6 @@ section, footer {
     padding-top: 1.5rem; /* Le damos más aire arriba */
     background-color: transparent !important; /* Para que herede el blanco sin problemas */
 }
-
-
 
 
 
@@ -337,13 +332,6 @@ section, footer {
 .glass-stat-pill.yt:hover i { color: #FF0000 !important; }
 
 
-
-
-
-
-
-
-
 /*
   =============================================================
   SOLUCIONES EXCLUSIVAS PARA MÓVILES Y TABLETS (Máx 992px)
@@ -386,5 +374,220 @@ section, footer {
         margin-top: 10px;
         padding: 15px;
         border-radius: 0.35rem;
+    }
+}
+
+/* =========================
+   DJ Private Quote Pricing
+========================= */
+.dj-pricing-section {
+    background-image: linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.9)), url('../images/showSection.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.dj-pricing-intro {
+    max-width: 760px;
+}
+
+.dj-price-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.dj-anchor-card {
+    padding: clamp(2rem, 3vw, 2.6rem);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.55);
+}
+
+.dj-anchor-card .dj-price-card-top {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.dj-price-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.6);
+}
+
+.dj-price-card-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 1rem;
+}
+
+.dj-price-card-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dj-price-value {
+    font-size: clamp(2rem, 3.8vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.dj-feature-list li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.dj-feature-list i {
+    color: #7dff9e;
+    font-size: 1rem;
+    margin-top: 0.16rem;
+    flex-shrink: 0;
+}
+
+.dj-addon-box {
+    max-width: 860px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 1.2rem 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dj-logistics-card {
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.25rem 1.25rem;
+    color: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+.dj-logistics-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+}
+
+.dj-logistics-title {
+    grid-column: 1 / -1; /* Título centrado en todo el ancho (incluye el badge) */
+    text-align: center;
+}
+
+.dj-logistics-title h4 {
+    text-align: center !important;
+}
+
+.dj-logistics-copy {
+    grid-column: 1;
+}
+
+.dj-logistics-copy p {
+    line-height: 1.55;
+}
+
+.dj-logistics-price-badge {
+    min-width: 96px;
+    text-align: center;
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(5, 5, 5, 0.78);
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: clamp(1.4rem, 2.1vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    grid-column: 2;
+    grid-row: 2; /* Evita superponer el badge cuando el título ocupa ambas columnas */
+    justify-self: center;
+    align-self: center;
+}
+
+.dj-logistics-card h4 {
+    color: #fff;
+}
+
+.dj-logistics-note {
+    margin-top: 0.55rem;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.dj-rider-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    color: rgba(219, 243, 228, 0.92);
+    text-decoration: underline;
+    text-decoration-color: rgba(125, 255, 158, 0.55);
+    text-underline-offset: 3px;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.dj-rider-link:hover {
+    color: #cffff0;
+    text-decoration-color: rgba(125, 255, 158, 0.9);
+}
+
+.dj-logistics-card-bonus {
+    border-color: rgba(125, 255, 158, 0.22);
+    box-shadow: 0 10px 22px rgba(32, 145, 84, 0.14);
+}
+
+.dj-logistics-card-bonus .dj-logistics-price-badge {
+    color: #7dff9e;
+    border-color: rgba(125, 255, 158, 0.35);
+}
+
+.dj-logistics-card-upsell {
+    border-color: rgba(255, 125, 72, 0.2);
+    box-shadow: 0 10px 22px rgba(181, 89, 44, 0.14);
+}
+
+.dj-logistics-card-upsell .dj-logistics-price-badge {
+    color: #ff9a5c;
+    border-color: rgba(255, 154, 92, 0.35);
+}
+
+@media (max-width: 991.98px) {
+    .dj-logistics-layout {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        row-gap: 0.4rem;
+    }
+
+    .dj-logistics-price-badge {
+        grid-column: 1;
+        grid-row: auto;
+        margin-bottom: 0.2rem;
+        justify-self: center;
+    }
+}
+
+.dj-scarcity-note {
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991.98px) {
+    .dj-pricing-section {
+        background-attachment: scroll !important;
     }
 }
