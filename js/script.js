@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarHeight = navbar.offsetHeight;
 
   // 2. Seleccionamos SOLO las secciones donde queremos que la barra sea transparente
-  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking');
+  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking, #formatos-show');
 
   // 3. Función que evalúa dónde estamos
   function checkNavbarState() {
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (scrollPos >= secTop && scrollPos < secBottom) {
         isTransparent = true; // La barra debe ser transparente
 
-        // Pero SOLO ocultamos el logo si estamos específicamente en el Hero
-        if (sec.classList.contains('hero-section')) {
+        // Pero SOLO ocultamos el logo si estamos específicamente en el Hero y hay un hero-logo grande
+        if (sec.classList.contains('hero-section') && document.querySelector('.hero-logo')) {
           hideLogo = true;
         }
       }
