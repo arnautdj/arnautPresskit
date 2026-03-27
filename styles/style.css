@@ -1,38 +1,41 @@
 html {
-  scroll-behavior: smooth;
-  /* Eliminamos el scroll-padding-top global de aquí */
+    scroll-behavior: smooth;
+    /* Eliminamos el scroll-padding-top global de aquí */
 }
 
 /* 1. Le damos el margen superior a TODAS las secciones por defecto */
-section, footer {
-  scroll-margin-top: 55px;
+section,
+footer {
+    scroll-margin-top: 55px;
 }
 
 /* 2. EXCEPCIÓN: Las secciones inmersivas deben tocar el techo (0px) para que la barra transparente se superponga al fondo */
-#el-show, #video, #booking {
-  scroll-margin-top: 0px !important;
+#el-show,
+#video,
+#booking {
+    scroll-margin-top: 0px !important;
 }
 
 .navbar {
-  background-color: transparent;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
-  /* Transición suave para el cambio de color */
-  transition: background-color 0.3s ease-in-out;
+    /* Transición suave para el cambio de color */
+    transition: background-color 0.3s ease-in-out;
 }
 
 .navbar-solid {
-  background-color: #212529 !important;
-  /* Color exacto de 'bg-dark' */
+    background-color: #212529 !important;
+    /* Color exacto de 'bg-dark' */
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 .navbar .nav-link:hover {
-  color: #f1f1f1 !important;
+    color: #f1f1f1 !important;
 }
 
 
@@ -40,19 +43,19 @@ section, footer {
 
 
 /* Efecto interactivo para los botones principales de la web */
-.hero-section .btn, 
+.hero-section .btn,
 #el-show .btn,
 #musica .btn,
 #video .btn {
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hero-section .btn:hover, 
+.hero-section .btn:hover,
 #el-show .btn:hover,
 #musica .btn:hover,
 #video .btn:hover {
-    transform: scale(1.08); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -63,46 +66,46 @@ section, footer {
 
 .hero-section {
 
-  position: relative;
+    position: relative;
 
-  /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
-  height: 100vh;
+    /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
+    height: 100vh;
 
-  background-image: url('../images/hero-background.webp');
+    background-image: url('../images/hero-background.webp');
 
-  /* 3. Estilos para la imagen de fondo */
-  background-size: cover;
-  /* Cubre todo el espacio, sin deformarse */
-  background-position: center center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-attachment: fixed;
+    /* 3. Estilos para la imagen de fondo */
+    background-size: cover;
+    /* Cubre todo el espacio, sin deformarse */
+    background-position: center center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-attachment: fixed;
 
 }
 
 .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 0;
 }
 
 /* Logo de la portada sobre el fondo */
 .hero-logo {
-  max-width: 500px;
-  width: 80%;
+    max-width: 500px;
+    width: 80%;
 }
 
 /* Contenedor para el logo y subtítulo en el Hero */
 .hero-content-container {
-  padding-top: 100px;
-  position: relative;
-  z-index: 1;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -132,15 +135,20 @@ section, footer {
     background-image: linear-gradient(rgba(15, 15, 15, 0.512), rgba(15, 15, 15, 0.8)), url('../images/showSection.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
+    background-attachment: fixed;
+    /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
 }
 
 /* --- ESTILO PREMIUM PARA LAS TARJETAS DE EL SHOW --- */
 #el-show .card {
-    border: none; /* Quitamos el borde gris feo por defecto */
-    border-radius: 20px; /* Esquinas muy redondeadas, igual que el video */
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); /* La sombra difusa que crea el efecto flotante */
-    overflow: hidden; /* OBLIGATORIO: Evita que el fondo blanco de la tarjeta se salga por las esquinas redondas */
+    border: none;
+    /* Quitamos el borde gris feo por defecto */
+    border-radius: 20px;
+    /* Esquinas muy redondeadas, igual que el video */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+    /* La sombra difusa que crea el efecto flotante */
+    overflow: hidden;
+    /* OBLIGATORIO: Evita que el fondo blanco de la tarjeta se salga por las esquinas redondas */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
@@ -152,9 +160,12 @@ section, footer {
 
 /* Limpieza del encabezado de la tarjeta */
 #el-show .card-header {
-    border-bottom: none; /* Quitamos la línea divisoria para un look más limpio */
-    padding-top: 1.5rem; /* Le damos más aire arriba */
-    background-color: transparent !important; /* Para que herede el blanco sin problemas */
+    border-bottom: none;
+    /* Quitamos la línea divisoria para un look más limpio */
+    padding-top: 1.5rem;
+    /* Le damos más aire arriba */
+    background-color: transparent !important;
+    /* Para que herede el blanco sin problemas */
 }
 
 
@@ -179,7 +190,8 @@ section, footer {
     height: auto;
     transform: translateX(-50%) translateY(-50%);
     z-index: 0;
-    object-fit: cover; /* Asegura que el video llene el espacio sin deformarse */
+    object-fit: cover;
+    /* Asegura que el video llene el espacio sin deformarse */
 }
 
 .video-overlay {
@@ -188,13 +200,15 @@ section, footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 15, 15, 0.75); /* Oscurece el video para leer el texto */
+    background-color: rgba(15, 15, 15, 0.75);
+    /* Oscurece el video para leer el texto */
     z-index: 1;
 }
 
 .video-content {
     position: relative;
-    z-index: 2; /* Pone el contenido por encima del video y el filtro */
+    z-index: 2;
+    /* Pone el contenido por encima del video y el filtro */
 }
 
 /* Efecto hover para las miniaturas de video */
@@ -202,20 +216,22 @@ section, footer {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
-    border-radius: 40px; /* Bordes mucho más redondeados y modernos */
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6); /* Sombra difusa, cero bordes duros */
+    border-radius: 40px;
+    /* Bordes mucho más redondeados y modernos */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6);
+    /* Sombra difusa, cero bordes duros */
 }
 
 .video-card img {
-  border-radius: 40px;
+    border-radius: 40px;
     transition: all 0.4s ease;
 }
 
 @media (hover: hover) {
-    
+
     /* En PC, la imagen empieza apagada y dramática */
     .video-card img {
-        filter: brightness(0.85) saturate(0.6); 
+        filter: brightness(0.85) saturate(0.6);
     }
 
     /* Al pasar el ratón, la tarjeta entera flota */
@@ -225,24 +241,16 @@ section, footer {
 
     /* Y la imagen estalla en color con un zoom interno */
     .video-card:hover img {
-        filter: brightness(1.1) saturate(1.1); 
-        transform: scale(1.02); 
+        filter: brightness(1.1) saturate(1.1);
+        transform: scale(1.02);
     }
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-}
-
-.video-card:hover img {
-    filter: brightness(1.1) saturate(1.1); /* Estalla el color al hacer hover */
-    transform: scale(1.02); /* Pequeño zoom interno */
 }
 
 
 /* Definir el formato vertical para Shorts/Reels en Bootstrap */
 .ratio-9x16 {
-    --bs-aspect-ratio: 177.77%; /* Es el resultado de dividir 16 / 9 */
+    --bs-aspect-ratio: 177.77%;
+    /* Es el resultado de dividir 16 / 9 */
 }
 
 
@@ -257,18 +265,22 @@ section, footer {
 
 
 .bg-black {
-    background-color: #070707 !important; /* Un negro súper profundo, más oscuro que el bg-dark normal */
+    background-color: #070707 !important;
+    /* Un negro súper profundo, más oscuro que el bg-dark normal */
 }
 
 /* El texto gigante del fondo */
 .booking-bg-text {
-    font-size: clamp(5rem, 18vw, 20rem); /* Se adapta perfectamente al celular y a monitores gigantes */
+    font-size: clamp(5rem, 18vw, 20rem);
+    /* Se adapta perfectamente al celular y a monitores gigantes */
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02); /* Súper transparente para que sea sutil */
+    color: rgba(255, 255, 255, 0.02);
+    /* Súper transparente para que sea sutil */
     line-height: 1;
     letter-spacing: -5px;
     z-index: 0;
-    pointer-events: none; /* Evita que el usuario seleccione el texto por error */
+    pointer-events: none;
+    /* Evita que el usuario seleccione el texto por error */
 }
 
 /* Efecto Glassmorphism (Cristal) para los contactos */
@@ -278,12 +290,14 @@ section, footer {
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con un rebote elegante */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Animación con un rebote elegante */
 }
 
 .glass-card:hover {
     background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-10px); /* La tarjeta flota hacia arriba */
+    transform: translateY(-10px);
+    /* La tarjeta flota hacia arriba */
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
@@ -305,7 +319,8 @@ section, footer {
 }
 
 .social-btn:hover i {
-    color: black !important; /* Al hacer hover, el icono se vuelve negro sobre el fondo blanco */
+    color: black !important;
+    /* Al hacer hover, el icono se vuelve negro sobre el fondo blanco */
 }
 
 /* Píldoras de estadísticas sociales para el Footer */
@@ -326,10 +341,22 @@ section, footer {
 }
 
 /* Colores específicos al pasar el ratón para dar un toque premium */
-.glass-stat-pill.ig:hover i { color: #E1306C !important; }
-.glass-stat-pill.tk:hover i { color: #00f2fe !important; text-shadow: 2px 0px 0px #fe0979; }
-.glass-stat-pill.fb:hover i { color: #1877F2 !important; }
-.glass-stat-pill.yt:hover i { color: #FF0000 !important; }
+.glass-stat-pill.ig:hover i {
+    color: #E1306C !important;
+}
+
+.glass-stat-pill.tk:hover i {
+    color: #00f2fe !important;
+    text-shadow: 2px 0px 0px #fe0979;
+}
+
+.glass-stat-pill.fb:hover i {
+    color: #1877F2 !important;
+}
+
+.glass-stat-pill.yt:hover i {
+    color: #FF0000 !important;
+}
 
 
 /*
@@ -348,24 +375,24 @@ section, footer {
 
     /* 2. CORRECCIÓN EL SHOW: Ajusta el espacio para que no choque con la barra */
     #el-show {
-        align-items: flex-start !important; 
-        padding-top: 100px !important; 
+        align-items: flex-start !important;
+        padding-top: 100px !important;
         padding-bottom: 80px !important;
     }
 
     /* 3. CORRECCIÓN BOOKING: Ajusta el espacio del footer */
     #booking {
-        justify-content: flex-start !important; 
-        padding-top: 130px !important; 
+        justify-content: flex-start !important;
+        padding-top: 130px !important;
         padding-bottom: 60px !important;
     }
 
     /* 4. EFECTO CRISTAL: Barra de navegación difuminada */
     .navbar:not(.navbar-solid) {
         background-color: rgba(15, 15, 15, 0.5) !important;
-        backdrop-filter: blur(12px); 
-        -webkit-backdrop-filter: blur(12px); 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     /* 5. MENÚ DESPLEGABLE: Fondo sólido al abrir el botón de las 3 rayitas */
@@ -381,16 +408,13 @@ section, footer {
    DJ Private Quote Pricing
 ========================= */
 .dj-pricing-section {
-    background-image: linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.9)), url('../images/showSection.webp');
+    background-image: linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.9)), url('../images/hero-background.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #fff;
 }
 
-.dj-pricing-intro {
-    max-width: 760px;
-}
 
 .dj-price-card {
     background: rgba(255, 255, 255, 0.03);
@@ -482,7 +506,8 @@ section, footer {
 }
 
 .dj-logistics-title {
-    grid-column: 1 / -1; /* Título centrado en todo el ancho (incluye el badge) */
+    grid-column: 1 / -1;
+    /* Título centrado en todo el ancho (incluye el badge) */
     text-align: center;
 }
 
@@ -511,7 +536,8 @@ section, footer {
     letter-spacing: 0.5px;
     line-height: 1;
     grid-column: 2;
-    grid-row: 2; /* Evita superponer el badge cuando el título ocupa ambas columnas */
+    grid-row: 2;
+    /* Evita superponer el badge cuando el título ocupa ambas columnas */
     justify-self: center;
     align-self: center;
 }
@@ -589,5 +615,56 @@ section, footer {
 @media (max-width: 991.98px) {
     .dj-pricing-section {
         background-attachment: scroll !important;
+        padding-top: 5rem !important;
+    }
+}
+
+/* DJ Selection Landing */
+#selection-hero {
+    padding-top: 90px;
+    padding-bottom: 48px;
+}
+
+.selection-subtitle {
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 480px;
+}
+
+.selection-cards-wrapper {
+    max-width: 1000px;
+}
+
+.selection-card {
+    min-height: 380px;
+}
+
+.selection-card-img {
+    object-fit: cover;
+    object-position: center;
+    bottom: 0;
+    right: 0;
+}
+
+.selection-card-content {
+    min-height: 380px;
+    z-index: 1;
+}
+
+.selection-card-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.selection-card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    transition: background 0.3s ease;
+}
+
+@media (hover: hover) {
+    .selection-card-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.65) 100%);
+    }
+
+    .selection-card:hover .selection-card-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     }
 }
