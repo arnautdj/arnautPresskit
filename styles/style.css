@@ -417,6 +417,9 @@ footer {
     color: #fff;
 }
 
+.dj-pricing-section--performance {
+    background-image: linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.9)), url('../images/hero-background.webp');
+}
 
 .dj-price-card {
     background: rgba(255, 255, 255, 0.03);
@@ -797,12 +800,15 @@ footer {
 }
 
 .upgrade-banner .dj-feature-list li {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.7rem;
+    align-items: start;
 }
 
 .upgrade-detail-note {
-    flex-basis: 100%;
-    margin: 0.35rem 0 0 1.7rem;
+    grid-column: 2;
+    margin: 0.35rem 0 0 0;
     font-size: 0.88rem;
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.55);
@@ -814,7 +820,7 @@ footer {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(rgba(7, 7, 7, 0.78), rgba(7, 7, 7, 0.78)), url('../images/photo-10.webp');
+    background-image: linear-gradient(rgba(7, 7, 7, 0.78), rgba(7, 7, 7, 0.78)), url('../images/photo-1.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -878,5 +884,12 @@ footer {
     .upgrade-banner {
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         border-top: 3px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .upgrade-price-tag {
+        white-space: normal;
+        text-align: center;
+        display: block;
+        font-size: 1.15rem;
     }
 }
