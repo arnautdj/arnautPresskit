@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarHeight = navbar.offsetHeight;
 
   // 2. Seleccionamos SOLO las secciones donde queremos que la barra sea transparente
-  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking, #formatos-show, #selection-hero');
+  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking, #formatos-show, #selection-hero, #equipos-hero, #produccion-mayor');
 
   // 3. Función que evalúa dónde estamos
   function checkNavbarState() {

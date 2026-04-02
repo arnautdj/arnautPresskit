@@ -12,7 +12,9 @@ footer {
 /* 2. EXCEPCIÓN: Las secciones inmersivas deben tocar el techo (0px) para que la barra transparente se superponga al fondo */
 #el-show,
 #video,
-#booking {
+#booking,
+#equipos-hero,
+#produccion-mayor {
     scroll-margin-top: 0px !important;
 }
 
@@ -691,5 +693,190 @@ footer {
 
     .selection-card:hover .selection-card-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    }
+}
+
+/* =========================
+   DJ Equipos / Paquetes Page
+========================= */
+
+/* ===== HERO EQUIPOS ===== */
+#equipos-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/mis-equipos.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #070707;
+}
+
+#equipos-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.78) 0%, rgba(7, 7, 7, 0.92) 100%);
+    z-index: 0;
+}
+
+#equipos-hero>.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== PAQUETES SECTION ===== */
+#paquetes {
+    background-color: #0f0f0f;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Package card image */
+.pkg-card-img-wrap {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+    margin: -0.5rem -0.5rem 1.5rem -0.5rem;
+}
+
+.pkg-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85);
+    transition: transform 0.4s ease;
+}
+
+.dj-price-card:hover .pkg-card-img-wrap img {
+    transform: scale(1.04);
+}
+
+.pkg-aforo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.75rem;
+}
+
+/* ===== UPGRADE BANNER ===== */
+#upgrade {
+    background-color: #0f0f0f;
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+.upgrade-banner {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 2rem 2.25rem;
+}
+
+.upgrade-price-tag {
+    display: inline-block;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    font-weight: 800;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+}
+
+.upgrade-banner .dj-feature-list li {
+    flex-wrap: wrap;
+}
+
+.upgrade-detail-note {
+    flex-basis: 100%;
+    margin: 0.35rem 0 0 1.7rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ===== PRODUCCION MAYOR ===== */
+#produccion-mayor {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(7, 7, 7, 0.78), rgba(7, 7, 7, 0.78)), url('../images/photo-10.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#produccion-mayor>.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== BOOKING FINAL ===== */
+#booking-final {
+    background-color: #070707;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.65rem 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-pill:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.wa-cta-btn {
+    font-size: 1.1rem;
+    padding: 0.85rem 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 991.98px) {
+    #equipos-hero {
+        background-attachment: scroll !important;
+        padding-top: 110px;
+        padding-bottom: 80px;
+    }
+
+    #produccion-mayor {
+        background-attachment: scroll !important;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+
+    .upgrade-banner {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid rgba(255, 255, 255, 0.35);
     }
 }
