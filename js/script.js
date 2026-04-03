@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 1. Seleccionamos la barra de navegación
   const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
   const navbarHeight = navbar.offsetHeight;
 
   // 2. Seleccionamos SOLO las secciones donde queremos que la barra sea transparente
@@ -71,11 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 5. Comprobar si el menú está abierto
       // (Bootstrap le añade la clase 'show' cuando está abierto)
-      if (navCollapse.classList.contains('show')) {
+      if (navCollapse && navCollapse.classList.contains('show')) {
 
         // 6. Si está abierto, "hacemos clic" en el botón de hamburguesa
         // para forzar que se cierre.
-        navbarToggler.click();
+        if (navbarToggler) navbarToggler.click();
       }
     });
   });
