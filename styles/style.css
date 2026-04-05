@@ -390,7 +390,7 @@ footer {
   SOLUCIONES EXCLUSIVAS PARA MÓVILES Y TABLETS (Máx 992px)
   =============================================================
 */
-@media (max-width: 991.98px) {
+@media (hover: none) {
 
     /* 1. CORRECCIÓN PARALLAX: Evita el pixelado de fondos en iOS/Android */
     .hero-section,
@@ -622,7 +622,7 @@ footer {
     border-color: rgba(255, 154, 92, 0.35);
 }
 
-@media (max-width: 991.98px) {
+@media (hover: none) {
     .dj-logistics-layout {
         grid-template-columns: 1fr;
         align-items: flex-start;
@@ -644,7 +644,7 @@ footer {
     margin-right: auto;
 }
 
-@media (max-width: 991.98px) {
+@media (hover: none) {
     .dj-pricing-section {
         background-attachment: scroll !important;
         padding-top: 5rem !important;
@@ -951,7 +951,7 @@ footer {
     letter-spacing: 0.3px;
 }
 
-@media (max-width: 991.98px) {
+@media (hover: none) {
     #equipos-hero {
         background-attachment: scroll !important;
         padding-top: 110px;
