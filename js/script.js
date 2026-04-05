@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 1. Seleccionamos la barra de navegación
   const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
   const navbarHeight = navbar.offsetHeight;
 
   // 2. Seleccionamos SOLO las secciones donde queremos que la barra sea transparente
-  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking');
+  const transparentSections = document.querySelectorAll('.hero-section, #el-show, #video, #clips, #booking, #formatos-show, #selection-hero, #equipos-hero, #produccion-mayor');
 
   // 3. Función que evalúa dónde estamos
   function checkNavbarState() {
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (scrollPos >= secTop && scrollPos < secBottom) {
         isTransparent = true; // La barra debe ser transparente
 
-        // Pero SOLO ocultamos el logo si estamos específicamente en el Hero
-        if (sec.classList.contains('hero-section')) {
+        // Pero SOLO ocultamos el logo si estamos específicamente en el Hero y hay un hero-logo grande
+        if (sec.classList.contains('hero-section') && document.querySelector('.hero-logo')) {
           hideLogo = true;
         }
       }
@@ -71,11 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 5. Comprobar si el menú está abierto
       // (Bootstrap le añade la clase 'show' cuando está abierto)
-      if (navCollapse.classList.contains('show')) {
+      if (navCollapse && navCollapse.classList.contains('show')) {
 
         // 6. Si está abierto, "hacemos clic" en el botón de hamburguesa
         // para forzar que se cierre.
-        navbarToggler.click();
+        if (navbarToggler) navbarToggler.click();
       }
     });
   });

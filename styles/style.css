@@ -1,38 +1,88 @@
+:root {
+    /* Glassmorphism — 3 niveles semánticos */
+    --glass-1-bg: rgba(255, 255, 255, 0.03);
+    /* tarjetas principales */
+    --glass-1-blur: blur(15px);
+    --glass-1-border: 1px solid rgba(255, 255, 255, 0.12);
+
+    --glass-2-bg: rgba(255, 255, 255, 0.025);
+    /* tarjetas de precio */
+    --glass-2-blur: blur(12px);
+    --glass-2-border: 1px solid rgba(255, 255, 255, 0.10);
+
+    --glass-3-bg: rgba(255, 255, 255, 0.03);
+    /* píldoras y accesorios */
+    --glass-3-blur: blur(10px);
+    --glass-3-border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Border radius — 4 valores */
+    --radius-pill: 50px;
+    /* píldoras, stat badges */
+    --radius-video: 40px;
+    /* miniaturas de video */
+    --radius-card: 20px;
+    /* tarjetas principales */
+    --radius-sm: 12px;
+    /* elementos internos y badges */
+
+    /* Colores de fondo oscuro — 3 niveles */
+    --clr-bg-1: 7, 7, 7;
+    /* #070707 — más oscuro */
+    --clr-bg-2: 15, 15, 15;
+    /* #0f0f0f — oscuro */
+    --clr-bg-3: 10, 10, 10;
+    /* #0a0a0a — intermedio */
+}
+
 html {
-  scroll-behavior: smooth;
-  /* Eliminamos el scroll-padding-top global de aquí */
+    scroll-behavior: smooth;
+    /* Eliminamos el scroll-padding-top global de aquí */
+}
+
+/* Utilidades globales */
+.tracking-wide {
+    letter-spacing: 2px;
+}
+
+.transition-color {
+    transition: color 0.3s ease;
 }
 
 /* 1. Le damos el margen superior a TODAS las secciones por defecto */
-section, footer {
-  scroll-margin-top: 55px;
+section,
+footer {
+    scroll-margin-top: 55px;
 }
 
 /* 2. EXCEPCIÓN: Las secciones inmersivas deben tocar el techo (0px) para que la barra transparente se superponga al fondo */
-#el-show, #video, #booking {
-  scroll-margin-top: 0px !important;
+#el-show,
+#video,
+#booking,
+#equipos-hero,
+#produccion-mayor {
+    scroll-margin-top: 0px !important;
 }
 
 .navbar {
-  background-color: transparent;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
-  /* Transición suave para el cambio de color */
-  transition: background-color 0.3s ease-in-out;
+    /* Transición suave para el cambio de color */
+    transition: background-color 0.3s ease-in-out;
 }
 
 .navbar-solid {
-  background-color: #212529 !important;
-  /* Color exacto de 'bg-dark' */
+    background-color: #212529 !important;
+    /* Color exacto de 'bg-dark' */
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 .navbar .nav-link:hover {
-  color: #f1f1f1 !important;
+    color: #f1f1f1 !important;
 }
 
 
@@ -40,19 +90,19 @@ section, footer {
 
 
 /* Efecto interactivo para los botones principales de la web */
-.hero-section .btn, 
+.hero-section .btn,
 #el-show .btn,
 #musica .btn,
 #video .btn {
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hero-section .btn:hover, 
+.hero-section .btn:hover,
 #el-show .btn:hover,
 #musica .btn:hover,
 #video .btn:hover {
-    transform: scale(1.08); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -63,46 +113,46 @@ section, footer {
 
 .hero-section {
 
-  position: relative;
+    position: relative;
 
-  /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
-  height: 100vh;
+    /* 100vh significa 100% de la altura de la ventana (Viewport Height) */
+    height: 100vh;
 
-  background-image: url('../images/hero-background.webp');
+    background-image: url('../images/hero-background.webp');
 
-  /* 3. Estilos para la imagen de fondo */
-  background-size: cover;
-  /* Cubre todo el espacio, sin deformarse */
-  background-position: center center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-attachment: fixed;
+    /* 3. Estilos para la imagen de fondo */
+    background-size: cover;
+    /* Cubre todo el espacio, sin deformarse */
+    background-position: center center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-attachment: fixed;
 
 }
 
 .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 0;
 }
 
 /* Logo de la portada sobre el fondo */
 .hero-logo {
-  max-width: 500px;
-  width: 80%;
+    max-width: 500px;
+    width: 80%;
 }
 
 /* Contenedor para el logo y subtítulo en el Hero */
 .hero-content-container {
-  padding-top: 100px;
-  position: relative;
-  z-index: 1;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -125,25 +175,27 @@ section, footer {
 
 
 
-
-
-
 /* SHOW SECTION */
 
 /* Fondo inmersivo para la sección El Show */
 #el-show {
-    background-image: linear-gradient(rgba(15, 15, 15, 0.512), rgba(15, 15, 15, 0.8)), url('../images/showSection.webp');
+    background-image: linear-gradient(rgba(var(--clr-bg-2), 0.512), rgba(var(--clr-bg-2), 0.8)), url('../images/showSection.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
+    background-attachment: fixed;
+    /* Esto crea un efecto "parallax" súper elegante al hacer scroll */
 }
 
 /* --- ESTILO PREMIUM PARA LAS TARJETAS DE EL SHOW --- */
 #el-show .card {
-    border: none; /* Quitamos el borde gris feo por defecto */
-    border-radius: 20px; /* Esquinas muy redondeadas, igual que el video */
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); /* La sombra difusa que crea el efecto flotante */
-    overflow: hidden; /* OBLIGATORIO: Evita que el fondo blanco de la tarjeta se salga por las esquinas redondas */
+    border: none;
+    /* Quitamos el borde gris feo por defecto */
+    border-radius: var(--radius-card);
+    /* Esquinas muy redondeadas, igual que el video */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+    /* La sombra difusa que crea el efecto flotante */
+    overflow: hidden;
+    /* OBLIGATORIO: Evita que el fondo blanco de la tarjeta se salga por las esquinas redondas */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
@@ -155,12 +207,13 @@ section, footer {
 
 /* Limpieza del encabezado de la tarjeta */
 #el-show .card-header {
-    border-bottom: none; /* Quitamos la línea divisoria para un look más limpio */
-    padding-top: 1.5rem; /* Le damos más aire arriba */
-    background-color: transparent !important; /* Para que herede el blanco sin problemas */
+    border-bottom: none;
+    /* Quitamos la línea divisoria para un look más limpio */
+    padding-top: 1.5rem;
+    /* Le damos más aire arriba */
+    background-color: transparent !important;
+    /* Para que herede el blanco sin problemas */
 }
-
-
 
 
 
@@ -184,7 +237,8 @@ section, footer {
     height: auto;
     transform: translateX(-50%) translateY(-50%);
     z-index: 0;
-    object-fit: cover; /* Asegura que el video llene el espacio sin deformarse */
+    object-fit: cover;
+    /* Asegura que el video llene el espacio sin deformarse */
 }
 
 .video-overlay {
@@ -193,13 +247,15 @@ section, footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 15, 15, 0.75); /* Oscurece el video para leer el texto */
+    background-color: rgba(var(--clr-bg-2), 0.75);
+    /* Oscurece el video para leer el texto */
     z-index: 1;
 }
 
 .video-content {
     position: relative;
-    z-index: 2; /* Pone el contenido por encima del video y el filtro */
+    z-index: 2;
+    /* Pone el contenido por encima del video y el filtro */
 }
 
 /* Efecto hover para las miniaturas de video */
@@ -207,20 +263,22 @@ section, footer {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
-    border-radius: 40px; /* Bordes mucho más redondeados y modernos */
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6); /* Sombra difusa, cero bordes duros */
+    border-radius: var(--radius-video);
+    /* Bordes mucho más redondeados y modernos */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6);
+    /* Sombra difusa, cero bordes duros */
 }
 
 .video-card img {
-  border-radius: 40px;
+    border-radius: var(--radius-video);
     transition: all 0.4s ease;
 }
 
 @media (hover: hover) {
-    
+
     /* En PC, la imagen empieza apagada y dramática */
     .video-card img {
-        filter: brightness(0.85) saturate(0.6); 
+        filter: brightness(0.85) saturate(0.6);
     }
 
     /* Al pasar el ratón, la tarjeta entera flota */
@@ -230,24 +288,16 @@ section, footer {
 
     /* Y la imagen estalla en color con un zoom interno */
     .video-card:hover img {
-        filter: brightness(1.1) saturate(1.1); 
-        transform: scale(1.02); 
+        filter: brightness(1.1) saturate(1.1);
+        transform: scale(1.02);
     }
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-}
-
-.video-card:hover img {
-    filter: brightness(1.1) saturate(1.1); /* Estalla el color al hacer hover */
-    transform: scale(1.02); /* Pequeño zoom interno */
 }
 
 
 /* Definir el formato vertical para Shorts/Reels en Bootstrap */
 .ratio-9x16 {
-    --bs-aspect-ratio: 177.77%; /* Es el resultado de dividir 16 / 9 */
+    --bs-aspect-ratio: 177.77%;
+    /* Es el resultado de dividir 16 / 9 */
 }
 
 
@@ -262,64 +312,50 @@ section, footer {
 
 
 .bg-black {
-    background-color: #070707 !important; /* Un negro súper profundo, más oscuro que el bg-dark normal */
+    background-color: rgb(var(--clr-bg-1)) !important;
+    /* Un negro súper profundo, más oscuro que el bg-dark normal */
 }
 
 /* El texto gigante del fondo */
 .booking-bg-text {
-    font-size: clamp(5rem, 18vw, 20rem); /* Se adapta perfectamente al celular y a monitores gigantes */
+    font-size: clamp(5rem, 18vw, 20rem);
+    /* Se adapta perfectamente al celular y a monitores gigantes */
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02); /* Súper transparente para que sea sutil */
+    color: rgba(255, 255, 255, 0.02);
+    /* Súper transparente para que sea sutil */
     line-height: 1;
     letter-spacing: -5px;
     z-index: 0;
-    pointer-events: none; /* Evita que el usuario seleccione el texto por error */
+    pointer-events: none;
+    /* Evita que el usuario seleccione el texto por error */
 }
 
-/* Efecto Glassmorphism (Cristal) para los contactos */
+/* Efecto Glassmorphism (Cristal) para los contactos — nivel 1 */
 .glass-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con un rebote elegante */
+    background-color: var(--glass-1-bg);
+    backdrop-filter: var(--glass-1-blur);
+    -webkit-backdrop-filter: var(--glass-1-blur);
+    border: var(--glass-1-border);
+    border-radius: var(--radius-card);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Animación con un rebote elegante */
 }
 
 .glass-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-10px); /* La tarjeta flota hacia arriba */
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-10px);
+    /* La tarjeta flota hacia arriba */
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
 
-/* Botones de Redes Sociales flotantes */
-.social-btn {
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-btn:hover {
-    background-color: white;
-    transform: translateY(-5px);
-}
-
-.social-btn:hover i {
-    color: black !important; /* Al hacer hover, el icono se vuelve negro sobre el fondo blanco */
-}
-
-/* Píldoras de estadísticas sociales para el Footer */
+/* Píldoras de estadísticas sociales para el Footer — nivel 3 */
 .glass-stat-pill {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50px;
+    background: var(--glass-3-bg);
+    backdrop-filter: var(--glass-3-blur);
+    -webkit-backdrop-filter: var(--glass-3-blur);
+    border: var(--glass-3-border);
+    border-radius: var(--radius-pill);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -331,17 +367,22 @@ section, footer {
 }
 
 /* Colores específicos al pasar el ratón para dar un toque premium */
-.glass-stat-pill.ig:hover i { color: #E1306C !important; }
-.glass-stat-pill.tk:hover i { color: #00f2fe !important; text-shadow: 2px 0px 0px #fe0979; }
-.glass-stat-pill.fb:hover i { color: #1877F2 !important; }
-.glass-stat-pill.yt:hover i { color: #FF0000 !important; }
+.glass-stat-pill.ig:hover i {
+    color: #E1306C !important;
+}
 
+.glass-stat-pill.tk:hover i {
+    color: #00f2fe !important;
+    text-shadow: 2px 0px 0px #fe0979;
+}
 
+.glass-stat-pill.fb:hover i {
+    color: #1877F2 !important;
+}
 
-
-
-
-
+.glass-stat-pill.yt:hover i {
+    color: #FF0000 !important;
+}
 
 
 /*
@@ -360,24 +401,24 @@ section, footer {
 
     /* 2. CORRECCIÓN EL SHOW: Ajusta el espacio para que no choque con la barra */
     #el-show {
-        align-items: flex-start !important; 
-        padding-top: 100px !important; 
+        align-items: flex-start !important;
+        padding-top: 100px !important;
         padding-bottom: 80px !important;
     }
 
     /* 3. CORRECCIÓN BOOKING: Ajusta el espacio del footer */
     #booking {
-        justify-content: flex-start !important; 
-        padding-top: 130px !important; 
+        justify-content: flex-start !important;
+        padding-top: 130px !important;
         padding-bottom: 60px !important;
     }
 
     /* 4. EFECTO CRISTAL: Barra de navegación difuminada */
     .navbar:not(.navbar-solid) {
-        background-color: rgba(15, 15, 15, 0.5) !important;
-        backdrop-filter: blur(12px); 
-        -webkit-backdrop-filter: blur(12px); 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        background-color: rgba(var(--clr-bg-2), 0.5) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     /* 5. MENÚ DESPLEGABLE: Fondo sólido al abrir el botón de las 3 rayitas */
@@ -386,5 +427,554 @@ section, footer {
         margin-top: 10px;
         padding: 15px;
         border-radius: 0.35rem;
+    }
+}
+
+/* =========================
+   DJ Private Quote Pricing
+========================= */
+.dj-pricing-section {
+    background-image: linear-gradient(rgba(var(--clr-bg-3), 0.72), rgba(var(--clr-bg-3), 0.9)), url('../images/hero-background.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.dj-pricing-section--performance {
+    background-image: linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.9)), url('../images/hero-background.webp');
+}
+
+.dj-price-card {
+    background: var(--glass-2-bg);
+    backdrop-filter: var(--glass-2-blur);
+    -webkit-backdrop-filter: var(--glass-2-blur);
+    border: var(--glass-2-border);
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.dj-anchor-card {
+    padding: clamp(2rem, 3vw, 2.6rem);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.55);
+}
+
+.dj-anchor-card .dj-price-card-top {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.dj-price-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.6);
+}
+
+.dj-price-card-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 1rem;
+}
+
+.dj-price-value {
+    font-size: clamp(2rem, 3.8vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.dj-feature-list li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.dj-feature-list i {
+    color: #7dff9e;
+    font-size: 1rem;
+    margin-top: 0.16rem;
+    flex-shrink: 0;
+}
+
+.xdjxz-card-img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.dj-anchor-card:hover .xdjxz-card-img {
+    filter: brightness(1.05);
+}
+
+@media (max-width: 767.98px) {
+    .xdjxz-card-img {
+        max-height: 160px;
+        margin-top: 0.5rem;
+    }
+}
+
+.dj-logistics-card {
+    background: var(--glass-3-bg);
+    backdrop-filter: var(--glass-3-blur);
+    -webkit-backdrop-filter: var(--glass-3-blur);
+    border: var(--glass-3-border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem 1.25rem;
+    color: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+.dj-logistics-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+}
+
+.dj-logistics-title {
+    grid-column: 1 / -1;
+    /* Título centrado en todo el ancho (incluye el badge) */
+    text-align: center;
+}
+
+.dj-logistics-title h4 {
+    text-align: center !important;
+}
+
+.dj-logistics-copy {
+    grid-column: 1;
+}
+
+.dj-logistics-copy p {
+    line-height: 1.55;
+}
+
+.dj-logistics-price-badge {
+    min-width: 96px;
+    text-align: center;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(var(--clr-bg-1), 0.78);
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: clamp(1.4rem, 2.1vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    grid-column: 2;
+    grid-row: 2;
+    /* Evita superponer el badge cuando el título ocupa ambas columnas */
+    justify-self: center;
+    align-self: center;
+}
+
+.dj-logistics-card h4 {
+    color: #fff;
+}
+
+.dj-logistics-note {
+    margin-top: 0.55rem;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.dj-rider-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    color: rgba(219, 243, 228, 0.92);
+    text-decoration: underline;
+    text-decoration-color: rgba(125, 255, 158, 0.55);
+    text-underline-offset: 3px;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.dj-rider-link:hover {
+    color: #cffff0;
+    text-decoration-color: rgba(125, 255, 158, 0.9);
+}
+
+.dj-logistics-card-bonus {
+    border-color: rgba(125, 255, 158, 0.22);
+    box-shadow: 0 10px 22px rgba(32, 145, 84, 0.14);
+}
+
+.dj-logistics-card-bonus .dj-logistics-price-badge {
+    color: #7dff9e;
+    border-color: rgba(125, 255, 158, 0.35);
+}
+
+.dj-logistics-card-upsell {
+    border-color: rgba(255, 125, 72, 0.2);
+    box-shadow: 0 10px 22px rgba(181, 89, 44, 0.14);
+}
+
+.dj-logistics-card-upsell .dj-logistics-price-badge {
+    color: #ff9a5c;
+    border-color: rgba(255, 154, 92, 0.35);
+}
+
+@media (max-width: 991.98px) {
+    .dj-logistics-layout {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        row-gap: 0.4rem;
+    }
+
+    .dj-logistics-price-badge {
+        grid-column: 1;
+        grid-row: auto;
+        margin-bottom: 0.2rem;
+        justify-self: center;
+    }
+}
+
+.dj-scarcity-note {
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991.98px) {
+    .dj-pricing-section {
+        background-attachment: scroll !important;
+        padding-top: 5rem !important;
+    }
+}
+
+/* DJ Selection Landing */
+#selection-hero {
+    padding-top: 90px;
+    padding-bottom: 48px;
+}
+
+.selection-subtitle {
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 480px;
+}
+
+.selection-cards-wrapper {
+    max-width: 1000px;
+}
+
+.selection-card {
+    min-height: 380px;
+}
+
+.selection-card--performance {
+    background-image: url('../images/fullSetThubail.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.selection-card--equipos {
+    background-image: url('../images/mis-equipos.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.selection-card-content {
+    min-height: 380px;
+    z-index: 1;
+}
+
+.selection-card-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.selection-card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    transition: background 0.3s ease;
+}
+
+/* "Ver Propuesta" button inside selection cards */
+.selection-card-btn {
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+    background: transparent;
+    padding: 0.55rem 1.6rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selection-card-btn:hover,
+.selection-card-btn:focus-visible {
+    background-color: #fff;
+    color: #212529;
+    border-color: #fff;
+    transform: none;
+    box-shadow: none;
+}
+
+@media (hover: hover) {
+    .selection-card-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.65) 100%);
+    }
+
+    .selection-card:hover .selection-card-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    }
+}
+
+/* =========================
+   DJ Equipos / Paquetes Page
+========================= */
+
+/* ===== HERO EQUIPOS ===== */
+#equipos-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/mis-equipos.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(var(--clr-bg-1));
+}
+
+#equipos-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Gradiente inferior suave para transición a la siguiente sección */
+    background: linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(var(--clr-bg-1), 0.55) 85%, rgba(var(--clr-bg-1), 0.8) 100%);
+    z-index: 0;
+}
+
+#equipos-hero>.container {
+    position: relative;
+    z-index: 1;
+    /* Nube centrada — fundido micro-step para borde imperceptible */
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.68) 0%,
+            rgba(0, 0, 0, 0.675) 2%,
+            rgba(0, 0, 0, 0.67) 4%,
+            rgba(0, 0, 0, 0.66) 6%,
+            rgba(0, 0, 0, 0.645) 8%,
+            rgba(0, 0, 0, 0.63) 10%,
+            rgba(0, 0, 0, 0.61) 12%,
+            rgba(0, 0, 0, 0.585) 14%,
+            rgba(0, 0, 0, 0.56) 16%,
+            rgba(0, 0, 0, 0.53) 18%,
+            rgba(0, 0, 0, 0.50) 20%,
+            rgba(0, 0, 0, 0.47) 22%,
+            rgba(0, 0, 0, 0.44) 24%,
+            rgba(0, 0, 0, 0.41) 26%,
+            rgba(0, 0, 0, 0.38) 28%,
+            rgba(0, 0, 0, 0.35) 30%,
+            rgba(0, 0, 0, 0.32) 33%,
+            rgba(0, 0, 0, 0.29) 36%,
+            rgba(0, 0, 0, 0.26) 39%,
+            rgba(0, 0, 0, 0.23) 42%,
+            rgba(0, 0, 0, 0.20) 45%,
+            rgba(0, 0, 0, 0.17) 48%,
+            rgba(0, 0, 0, 0.14) 52%,
+            rgba(0, 0, 0, 0.115) 56%,
+            rgba(0, 0, 0, 0.09) 60%,
+            rgba(0, 0, 0, 0.07) 64%,
+            rgba(0, 0, 0, 0.055) 68%,
+            rgba(0, 0, 0, 0.04) 72%,
+            rgba(0, 0, 0, 0.03) 76%,
+            rgba(0, 0, 0, 0.022) 80%,
+            rgba(0, 0, 0, 0.015) 84%,
+            rgba(0, 0, 0, 0.01) 88%,
+            rgba(0, 0, 0, 0.005) 92%,
+            rgba(0, 0, 0, 0.002) 96%,
+            transparent 100%);
+    padding: 8rem 2rem;
+}
+
+/* ===== PAQUETES SECTION ===== */
+#paquetes {
+    background-color: rgb(var(--clr-bg-2));
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Package card image */
+.pkg-card-img-wrap {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    position: relative;
+    margin: -0.5rem -0.5rem 1.5rem -0.5rem;
+}
+
+.pkg-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85);
+    transition: transform 0.4s ease;
+}
+
+.dj-price-card:hover .pkg-card-img-wrap img {
+    transform: scale(1.04);
+}
+
+.pkg-aforo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-pill);
+    padding: 0.3rem 0.85rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.75rem;
+}
+
+/* ===== UPGRADE BANNER ===== */
+#upgrade {
+    background-color: rgb(var(--clr-bg-2));
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+.upgrade-banner {
+    background: var(--glass-2-bg);
+    border: var(--glass-2-border);
+    border-left: 3px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius-card);
+    padding: 2rem 2.25rem;
+}
+
+.upgrade-price-tag {
+    display: inline-block;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    font-weight: 800;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+}
+
+.upgrade-banner .dj-feature-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.7rem;
+    align-items: start;
+}
+
+.upgrade-detail-note {
+    grid-column: 2;
+    margin: 0.35rem 0 0 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ===== PRODUCCION MAYOR ===== */
+#produccion-mayor {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../images/photo-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Degradado general: claro arriba → oscuro abajo */
+#produccion-mayor::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.35) 20%,
+            rgba(0, 0, 0, 0.65) 50%,
+            rgba(0, 0, 0, 0.72) 85%,
+            rgba(0, 0, 0, 0.82) 100%);
+    z-index: 0;
+}
+
+#produccion-mayor>.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== BOOKING FINAL ===== */
+#booking-final {
+    background-color: rgb(var(--clr-bg-1));
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--glass-3-bg);
+    border: var(--glass-3-border);
+    border-radius: var(--radius-pill);
+    padding: 0.65rem 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-pill:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.wa-cta-btn {
+    font-size: 1.1rem;
+    padding: 0.85rem 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 991.98px) {
+    #equipos-hero {
+        background-attachment: scroll !important;
+        padding-top: 110px;
+        padding-bottom: 80px;
+    }
+
+    #produccion-mayor {
+        background-attachment: scroll !important;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+
+    .upgrade-banner {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .upgrade-price-tag {
+        white-space: normal;
+        text-align: center;
+        display: block;
+        font-size: 1.15rem;
     }
 }
