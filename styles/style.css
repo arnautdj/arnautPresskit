@@ -499,6 +499,25 @@ footer {
     flex-shrink: 0;
 }
 
+.xdjxz-card-img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.dj-anchor-card:hover .xdjxz-card-img {
+    filter: brightness(1.05);
+}
+
+@media (max-width: 767.98px) {
+    .xdjxz-card-img {
+        max-height: 160px;
+        margin-top: 0.5rem;
+    }
+}
+
 .dj-logistics-card {
     background: var(--glass-3-bg);
     backdrop-filter: var(--glass-3-blur);
