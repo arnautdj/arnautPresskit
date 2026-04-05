@@ -644,6 +644,12 @@ footer {
     margin-right: auto;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .dj-pricing-section {
+        padding-top: 90px !important;
+    }
+}
+
 @media (hover: none) {
     .dj-pricing-section {
         background-attachment: scroll !important;
