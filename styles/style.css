@@ -625,7 +625,7 @@ footer {
 /* Desktop: compensar la diferencia de altura entre tarjetas logísticas */
 @media (hover: hover) and (pointer: fine) {
     .dj-logistics-card-upsell .dj-logistics-price-badge {
-        transform: translateY(-0.85rem);
+        transform: translateY(-1.25rem);
     }
 }
 
