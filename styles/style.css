@@ -421,7 +421,11 @@ footer {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* 5. MENÚ DESPLEGABLE: Fondo sólido al abrir el botón de las 3 rayitas */
+}
+
+/* 5. MENÚ DESPLEGABLE: Fondo sólido al abrir el botón de las 3 rayitas */
+/* Solo aplica cuando el navbar está realmente colapsado (hamburguesa) */
+@media (hover: none) and (max-width: 991.98px) {
     .navbar:not(.navbar-solid) .navbar-collapse {
         background-color: #212529;
         margin-top: 10px;
