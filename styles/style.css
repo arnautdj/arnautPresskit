@@ -553,6 +553,7 @@ footer {
 
 .dj-logistics-copy p {
     line-height: 1.55;
+    text-align: justify;
 }
 
 .dj-logistics-price-badge {
