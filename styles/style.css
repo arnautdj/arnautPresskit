@@ -622,6 +622,13 @@ footer {
     border-color: rgba(255, 154, 92, 0.35);
 }
 
+/* Desktop: compensar la diferencia de altura entre tarjetas logísticas */
+@media (hover: hover) and (pointer: fine) {
+    .dj-logistics-card-upsell .dj-logistics-price-badge {
+        transform: translateY(-0.85rem);
+    }
+}
+
 @media (hover: none) {
     .dj-logistics-layout {
         grid-template-columns: 1fr;
